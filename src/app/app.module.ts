@@ -13,16 +13,18 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { LinkedinLoginResponse } from "./linkedinLoginResponse/linkedinLoginResponse.component";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     LoginComponent,
     NotFoundComponent,
     MenuComponent,
     FooterComponent,
-    LinkedinLoginResponse
+    LinkedinLoginResponse,
+      HomeComponent
    ],
   imports: [
     BrowserModule,

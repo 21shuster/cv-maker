@@ -1,0 +1,22 @@
+@import "../../styles.scss";
+.formLogin {
+  position: absolute;
+  width: 622px;
+  height: 439px;
+  left: 409px;
+  top: 295px;
+}
+h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 72px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: -0.015em;
+
+  color: #fcf1f1;
+}
+
+
