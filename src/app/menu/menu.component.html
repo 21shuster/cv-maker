@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light" [ngClass]="{'white': bgWhite}">
+  <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">
+          <img src="assets/images/logo-cv.jpg" alt="thePeople">
+      </a>
+      <div class="navbar">
+          <ul class="nav justify-content-end">
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/search" routerLinkActive="active">Búsqueda</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn-upload" (click)="upload()" routerLinkActive="router-link-active">Subir nuevo</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>

@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'cv-maker'`, () => {
+  it(`should have as title 'thepeople'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('cv-maker');
+    expect(app.title).toEqual('thepeople');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cv-maker app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('thepeople app is running!');
   });
 });
