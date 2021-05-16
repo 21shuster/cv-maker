@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     window.location.href = `https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=${
       this.linkedInCredentials.clientId
-    }&redirect_uri=${this.linkedInCredentials.redirectUrl}&scope={this.linkedInCredentials.scope}`;
+    }&redirect_uri=${this.linkedInCredentials.redirectUrl}&scope=${this.linkedInCredentials.scope}`;
   }
 
   constructor(private router: Router, private fb: FormBuilder, private userService: UserService, private http: HttpClient) {
