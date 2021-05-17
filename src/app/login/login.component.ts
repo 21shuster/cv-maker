@@ -13,7 +13,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class LoginComponent implements OnInit {
 
-  mForm: FormGroup
+  mForm: FormGroup = new FormGroup({})
   isSent = false
 
   linkedInCredentials = {
@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
     redirectUrl: "http://localhost:4200/linkedInLogin",
     scope: "r_liteprofile%20r_emailaddress%20w_member_social" // To read basic user profile data and email
   };
+
+  imageToShow: any;
 
   login() {
     window.location.href = `https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=${
@@ -37,8 +39,35 @@ export class LoginComponent implements OnInit {
 
   }
 
+  loadScript() {
+    let node = document.createElement('script'); // creates the script tag
+    node.src = 'https://kit.fontawesome.com/f6d06810b1.js'; // sets the source (insert url in between quotes)
+    node.type = 'text/javascript'; // set the script type
+    node.async = true; // makes script run asynchronously
+    // append to head of document
+    document.getElementsByTagName('head')[0].appendChild(node);
+  }
+
+  loadImage(){
+    var random = Math.floor(Math.random() * 10000);
+    fetch(`https://api.artic.edu/api/v1/artworks/${random}`)
+      .then(resp => {
+        return resp.json()
+      })
+      .then(image => {
+        console.log(image);
+        if(image.status == 404){
+          this.loadImage();
+        }
+        this.imageToShow = `https://www.artic.edu/iiif/2/${image.data.image_id}/full/1500,1000/0/default.jpg`;
+        document.body.style.background = "url(" + this.imageToShow + ") no-repeat 80%";
+        console.log(this.imageToShow);
+      })
+  }
+
   ngOnInit() {
-    //Comprobar si estoy logueado, si estoy logueado que vaya al dasbboard
+    this.loadScript();
+    this.loadImage();
   }
 
   signup() {
@@ -58,6 +87,7 @@ export class LoginComponent implements OnInit {
     if (this.mForm.invalid) {
       return
     }
+
     /*Hacer llamada al service
     Hacer dos servicios: user, people
     llamar al servicio de login y en la respuesta guardar en el localStorage el token y redirigir al DASHBOARD

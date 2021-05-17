@@ -9,3 +9,11 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+body {
+  background: url(https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
