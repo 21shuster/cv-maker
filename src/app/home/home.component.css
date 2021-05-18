@@ -1,10 +1,16 @@
 @import "../../styles.scss";
+body{
+  background: "assets/images/backgroundHome.jpg" !important;
+}
 .formLogin {
   position: absolute;
   width: 622px;
   height: 439px;
   left: 409px;
   top: 295px;
+  border: 1px;
+  padding: 25px;
+  background-color: #ffffff;
 }
 h1 {
   font-family: Montserrat;
