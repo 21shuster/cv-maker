@@ -10,12 +10,6 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MenuComponent } from './components/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { FooterComponent } from './footer/footer.component';
-import { LinkedinLoginResponse } from "./linkedinLoginResponse/linkedinLoginResponse.component";
-import { HomeComponent } from './home/home.component';
-
-=======
 import { FooterComponent } from './components/footer/footer.component';
 import { LinkedinLoginResponse } from "./components/linkedinLoginResponse/linkedinLoginResponse.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +18,7 @@ import { FormPageComponent } from './pages/form-page/form-page.component';
 import { StepsComponent } from './components/steps/steps.component';
 import { StepTemplateComponent } from './components/step-template/step-template.component';
 import { CompletePageComponent } from './pages/complete-page/complete-page.component';
->>>>>>> eb160ee82b5ae59a4812aa217ec2dbadbfc6bf60
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [	
@@ -34,15 +28,11 @@ import { CompletePageComponent } from './pages/complete-page/complete-page.compo
     MenuComponent,
     FooterComponent,
     LinkedinLoginResponse,
-<<<<<<< HEAD
-      HomeComponent
-=======
     WizardComponent,
     FormPageComponent,
     StepsComponent,
     StepTemplateComponent,
     CompletePageComponent
->>>>>>> eb160ee82b5ae59a4812aa217ec2dbadbfc6bf60
    ],
   imports: [
     BrowserModule,
@@ -51,7 +41,8 @@ import { CompletePageComponent } from './pages/complete-page/complete-page.compo
     ReactiveFormsModule,
     FormsModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }, {
     provide: HTTP_INTERCEPTORS,
