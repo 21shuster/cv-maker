@@ -18,9 +18,10 @@ import { FormPageComponent } from './pages/form-page/form-page.component';
 import { StepsComponent } from './components/steps/steps.component';
 import { StepTemplateComponent } from './components/step-template/step-template.component';
 import { CompletePageComponent } from './pages/complete-page/complete-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     LoginComponent,
     NotFoundComponent,
@@ -40,7 +41,8 @@ import { CompletePageComponent } from './pages/complete-page/complete-page.compo
     ReactiveFormsModule,
     FormsModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }, {
     provide: HTTP_INTERCEPTORS,
