@@ -1,17 +1,46 @@
-import { Login } from './../models/login.model';
-import { UserService } from './../services/user.service';
+import { Login } from '../../models/login.model';
+import { UserService } from '../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    trigger('blackState', [
+      state('true', style({opacity: '1', background: 'linear-gradient(to right, #2c2d34, #242424)'})),
+      state('false', style({ opacity: '0', background: 'linear-gradient(to right, #2c2d34, #242424)'})),
+      transition('0 <=> 1', animate('1000ms ease'))
+    ]),
+    trigger('greenState', [
+      state('true', style({opacity: '1', background: 'linear-gradient(to right, #2c2d34, #467a5e)'})),
+      state('false', style({ opacity: '0', background: 'linear-gradient(to right, #2c2d34, #467a5e)'})),
+      transition('0 <=> 1', animate('1000ms ease'))
+    ])
+  ]
 })
 
 export class LoginComponent implements OnInit {
+
+  name = 'Angular 6';
+
+  blackState:boolean = true;
+  greenState: boolean = false;
+
+  toggle() {
+    this.blackState = !this.blackState;
+    this.greenState = !this.greenState;
+  }
 
   mForm: FormGroup = new FormGroup({})
   isSent = false
@@ -61,7 +90,8 @@ export class LoginComponent implements OnInit {
         }
         this.imageToShow = `https://www.artic.edu/iiif/2/${image.data.image_id}/full/1500,1000/0/default.jpg`;
         document.body.style.background = "url(" + this.imageToShow + ") no-repeat 80%";
-        console.log(this.imageToShow);
+        //document.body.style.cursor = "url(./assets/images/search.gif), auto";
+        document.body.style.cursor = "url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto";
       })
   }
 

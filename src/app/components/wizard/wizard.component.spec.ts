@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { LinkedinLoginResponseComponent } from './linkedinLoginResponse.component';
+import { WizardComponent } from './wizard.component';
 
-describe('LinkedinLoginResponseComponent', () => {
-  let component: LinkedinLoginResponseComponent;
-  let fixture: ComponentFixture<LinkedinLoginResponseComponent>;
+describe('WizardComponent', () => {
+  let component: WizardComponent;
+  let fixture: ComponentFixture<WizardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LinkedinLoginResponseComponent ]
+      declarations: [ WizardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinkedinLoginResponseComponent);
+    fixture = TestBed.createComponent(WizardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

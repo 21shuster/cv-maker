@@ -1,0 +1,42 @@
+<div class="step-template">
+  <h5 class="bd-wizard-step-title">Step {{ step.stepIndex }}</h5>
+  <div *ngIf="step.stepIndex == 1" class="step-content-label">
+    <h3 class="section-heading">Select business type </h3>
+    <p>Escoge la sección que más se ajuste a lo que te gusta.</p>
+    <div class="purpose-radio">
+      <input type="radio" name="purpose" id="mobile-design" class="purpose-radio-input" value="Moile Design">
+     <label for="mobile-design" class="purpose-radio-label">
+       <span class="label-icon">
+         <img src="assets/images/icon_mobile_design.svg" alt="branding" class="label-icon-default">
+         <img src="assets/images/icon_mobile_design_green.svg" alt="branding" class="label-icon-active">
+       </span>
+       <span class="label-text">Moile Design</span>
+     </label>
+    </div>
+    <div class="purpose-radio">
+      <input type="radio" name="purpose" id="web-design" class="purpose-radio-input" value="Web Design">
+     <label for="web-design" class="purpose-radio-label">
+       <span class="label-icon">
+         <img src="assets/images/icon_web_design.svg" alt="branding" class="label-icon-default">
+         <img src="assets/images/icon_web_design_green.svg" alt="branding" class="label-icon-active">
+       </span>
+       <span class="label-text">Web Design</span>
+     </label>
+    </div>
+    <div class="purpose-radio">
+      <input type="radio" name="purpose" id="branding" class="purpose-radio-input" value="Branding" checked>
+      <label for="branding" class="purpose-radio-label">
+        <span class="label-icon">
+          <img src="assets/images/icon_branding.svg" alt="branding" class="label-icon-default">
+          <img src="assets/images/icon_branding_green.svg" alt="branding" class="label-icon-active">
+        </span>
+        <span class="label-text">Branding</span>
+      </label>
+    </div>
+  </div>
+  <div >Here's where you show content for step {{ step.stepIndex }}</div>
+  <button class="step-complete-btn" (click)="onCompleteStep()">
+    <span class="completed-step-check material-icons">
+      {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+    </span>Complete Step {{ step.stepIndex }}</button>
+</div>
