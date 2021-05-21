@@ -2,8 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
-import { LinkedinLoginResponseComponent } from './linkedinLoginResponse.component';
+import {LinkedinLoginResponse} from './linkedinLoginResponse.component'
 
 describe('LinkedinLoginResponseComponent', () => {
   let component: LinkedinLoginResponseComponent;

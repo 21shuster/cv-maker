@@ -9,3 +9,11 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+body {
+  cursor:url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
