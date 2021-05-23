@@ -5,7 +5,8 @@ import { StepModel } from 'src/app/models/step.model';
 const STEPS = [
   { stepIndex: 1, isComplete: false },
   { stepIndex: 2, isComplete: false },
-  { stepIndex: 3, isComplete: false }
+  { stepIndex: 3, isComplete: false },
+  { stepIndex: 4, isComplete: false }
 ];
 
 @Injectable({

@@ -1,42 +1,247 @@
 <div class="step-template">
   <h5 class="bd-wizard-step-title">Step {{ step.stepIndex }}</h5>
   <div *ngIf="step.stepIndex == 1" class="step-content-label">
-    <h3 class="section-heading">Select business type </h3>
+    <h3 class="section-heading">Select business type</h3>
     <p>Escoge la sección que más se ajuste a lo que te gusta.</p>
     <div class="purpose-radio">
-      <input type="radio" name="purpose" id="mobile-design" class="purpose-radio-input" value="Moile Design">
-     <label for="mobile-design" class="purpose-radio-label">
-       <span class="label-icon">
-         <img src="assets/images/icon_mobile_design_.svg" alt="branding" class="label-icon-default">
-         <img src="assets/images/icon_mobile_design__green.svg" alt="branding" class="label-icon-active">
-       </span>
-       <span class="label-text">Mobile Design</span>
-     </label>
+      <input
+        type="radio"
+        name="purpose"
+        id="mobile-design"
+        class="purpose-radio-input"
+        value="Mobile Design"
+        (click)="onCompleteStep1($event)"
+      />
+      <label for="mobile-design" class="purpose-radio-label">
+        <span class="label-icon">
+          <img
+            src="assets/images/icon_mobile_design.svg"
+            alt="branding"
+            class="label-icon-default"
+          />
+          <img
+            src="assets/images/icon_mobile_design_green.svg"
+            alt="branding"
+            class="label-icon-active"
+          />
+        </span>
+        <span class="label-text">Mobile Design</span>
+      </label>
     </div>
     <div class="purpose-radio">
-      <input type="radio" name="purpose" id="web-design" class="purpose-radio-input" value="Web Design">
-     <label for="web-design" class="purpose-radio-label">
-       <span class="label-icon">
-         <img src="assets/images/icon_web_design.svg" alt="branding" class="label-icon-default">
-         <img src="assets/images/icon_web_design_green.svg" alt="branding" class="label-icon-active">
-       </span>
-       <span class="label-text">Web Design</span>
-     </label>
+      <input
+        type="radio"
+        name="purpose"
+        id="web-design"
+        class="purpose-radio-input"
+        value="Web Design"
+        (click)="onCompleteStep1($event)"
+      />
+      <label for="web-design" class="purpose-radio-label">
+        <span class="label-icon">
+          <img
+            src="assets/images/icon_web_design.svg"
+            alt="branding"
+            class="label-icon-default"
+          />
+          <img
+            src="assets/images/icon_web_design_green.svg"
+            alt="branding"
+            class="label-icon-active"
+          />
+        </span>
+        <span class="label-text">Web Design</span>
+      </label>
     </div>
     <div class="purpose-radio">
-      <input type="radio" name="purpose" id="branding" class="purpose-radio-input" value="Branding" checked>
+      <input
+        type="radio"
+        name="purpose"
+        id="branding"
+        class="purpose-radio-input"
+        value="Cybersecurity"
+        (click)="onCompleteStep1($event)"
+      />
       <label for="branding" class="purpose-radio-label">
         <span class="label-icon">
-          <img src="assets/images/icon_cyber_security.svg" alt="branding" class="label-icon-default">
-          <img src="assets/images/icon_cyber_security_green.svg" alt="branding" class="label-icon-active">
+          <img
+            src="assets/images/icon_cyber_security.svg"
+            alt="branding"
+            class="label-icon-default"
+          />
+          <img
+            src="assets/images/icon_cyber_security_green.svg"
+            alt="branding"
+            class="label-icon-active"
+          />
         </span>
         <span class="label-text">Cibersecurity</span>
       </label>
     </div>
   </div>
-  <div >Here's where you show content for step {{ step.stepIndex }}</div>
+  <div *ngIf="step.stepIndex == 2" class="step-content-label">
+    <h2 class="section-heading">Select your favourite languages</h2>
+    <div class="language-check">
+      <ul>
+        <li>
+          <input type="checkbox" id="cb1" value="angular" (click)="onCompleteStep2($event)"/><label for="cb1"
+            ><img src="assets/images/logo/angular.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb2" value="react" (click)="onCompleteStep2($event)"/><label for="cb2"
+            ><img src="assets/images/logo/react.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb3" value="vuejs" (click)="onCompleteStep2($event)"/><label for="cb3"
+            ><img src="assets/images/logo/vuejs.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb4" value="nodejs" (click)="onCompleteStep2($event)"/><label for="cb4"
+            ><img src="assets/images/logo/nodejs.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb5" value="html5" (click)="onCompleteStep2($event)"/><label for="cb5"
+            ><img src="assets/images/logo/html5.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb6" value="css3" (click)="onCompleteStep2($event)"/><label for="cb6"
+            ><img src="assets/images/logo/css3.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb7" value="javascript" (click)="onCompleteStep2($event)"/><label for="cb7"
+            ><img src="assets/images/logo/javascript.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb8" value="python" (click)="onCompleteStep2($event)"/><label for="cb8"
+            ><img src="assets/images/logo/python.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb9" value="ruby" (click)="onCompleteStep2($event)"/><label for="cb9"
+            ><img src="assets/images/logo/ruby.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb10" value="php" (click)="onCompleteStep2($event)"/><label for="cb10"
+            ><img src="assets/images/logo/php.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb11" value=".net" (click)="onCompleteStep2($event)"/><label for="cb11"
+            ><img src="assets/images/logo/.net.svg"
+          /></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb12" value="rust" (click)="onCompleteStep2($event)"/><label for="cb12"
+            ><img src="assets/images/logo/rust.svg"
+          /></label>
+        </li>
+        <!--<li><input type="checkbox" id="cb13" /><label for="cb13"><img src="assets/images/logo/java.svg" /></label></li>
+        <li><input type="checkbox" id="cb14" /><label for="cb14"><img src="assets/images/logo/kotlin.svg" /></label></li>
+        <li><input type="checkbox" id="cb15" /><label for="cb15"><img src="assets/images/logo/swift.svg" /></label></li>
+        <li><input type="checkbox" id="cb16" /><label for="cb16"><img src="assets/images/logo/android.svg" /></label></li>
+        <li><input type="checkbox" id="cb17" /><label for="cb17"><img src="assets/images/logo/c++.svg" /></label></li>
+        <li><input type="checkbox" id="cb18" /><label for="cb18"><img src="assets/images/logo/firebase.svg" /></label></li>-->
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="step.stepIndex == 3" class="step-content-label">
+    <h2 class="section-heading">Enter your Account Details</h2>
+    <div class="form-group">
+      <label for="firstName" class="sr-only">First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        class="form-control"
+        placeholder="First Name"
+        (input)="onCompleteStep3($event)"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName" class="sr-only">Last Name</label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        class="form-control"
+        placeholder="Last Name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber" class="sr-only">Phone Number</label>
+      <input
+        type="text"
+        name="phoneNumber"
+        id="phoneNumber"
+        class="form-control"
+        placeholder="Phone Number"
+      />
+    </div>
+    <div class="form-group">
+      <label for="emailAddress" class="sr-only">Email Address</label>
+      <input
+        type="email"
+        name="emailAddress"
+        id="emailAddress"
+        class="form-control"
+        placeholder="Email Address"
+      />
+    </div>
+  </div>
+  <div *ngIf="step.stepIndex == 4" class="step-content-label">
+    <h2 class="section-heading">Select your favourite hobbies</h2>
+    <div class="hobbie-check">
+      <ul>
+        <li>
+          <input type="checkbox" id="cb1" /><label for="cb1"><p>🧗‍♂️</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb2" /><label for="cb2"><p>🕺</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb3" /><label for="cb3"><p>🏃‍♂️</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb4" /><label for="cb4"><p>🕴️</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb5" /><label for="cb5"><p>⚽</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb6" /><label for="cb6"><p>🏀</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb7" /><label for="cb7"><p>🏓</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb8" /><label for="cb8"><p>🥊</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb9" /><label for="cb9"><p>⛸️</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb10" /><label for="cb10"><p>🎿</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb11" /><label for="cb11"><p>🥋</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb12" /><label for="cb12"><p>🎳</p></label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--<div >Here's where you show content for step {{ step.stepIndex }}</div>
   <button class="step-complete-btn" (click)="onCompleteStep()">
-    <span class="completed-step-check material-icons">
-      {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
-    </span>Complete Step {{ step.stepIndex }}</button>
+  <span class="completed-step-check material-icons">
+    {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+  </span>Complete Step {{ step.stepIndex }}</button>-->
 </div>
