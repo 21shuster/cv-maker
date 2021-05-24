@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light" [ngClass]="{'white': bgWhite}">
   <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">
-          <img src="assets/images/logo-cv.jpg" alt="logocvmaker">
+          <img class="rounded" src="assets/images/logo-cv.jpg" alt="logocvmaker">
       </a>
       <div class="navbar">
           <ul class="nav justify-content-end">
@@ -9,7 +9,10 @@
                   <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" routerLink="/search" routerLinkActive="active">Búsqueda</a>
+                  <a class="nav-link" routerLink="/search" routerLinkActive="active">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/search" routerLinkActive="active">Contact</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link btn-upload" (click)="upload()" routerLinkActive="router-link-active">Log in</a>

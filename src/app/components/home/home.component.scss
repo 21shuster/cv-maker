@@ -1,0 +1,142 @@
+html,
+body {
+  font-family: "Muli";
+}
+
+.fondo {
+  background-image: url("https://images.unsplash.com/photo-1469980098053-382eb10ba017?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80"),
+    url("https://blog.prezi.com/wp-content/uploads/2019/03/1_pzUhL5WpOeViwICDDgiLUA-1024x683.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  margin: auto;
+}
+
+.fondo p {
+  color: #fcf1f1;
+}
+
+.formLogin {
+  position: absolute;
+  width: 622px;
+  height: 520px;
+  left: 409px;
+  top: 320px;
+  border: 1px;
+  padding: 25px;
+  background-color: #ffffff;
+}
+
+.formLogin h3 {
+  margin-bottom: 30px;
+}
+.formLogin .btn-social {
+  margin: 8px 15px 5px 15px;
+  height: 40px;
+}
+.btn-lg {
+  margin: 5px 15px 15px 15px;
+}
+
+.fondo h2 {
+  margin-top: 50px;
+  font-family: "Muli";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  padding:10px;
+  line-height: 72px;
+  letter-spacing: -0.015em;
+  color: #fcf1f1;
+}
+
+.info {
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+
+.inner-info {
+  margin: auto;
+}
+
+.inner-info h3 {
+  margin: auto;
+  font-family: "Muli";
+}
+
+.hello-img {
+  height: 400px;
+  width: auto;
+  float: right;
+  margin: 50px;
+  border-radius: 10px;
+}
+
+.experience {
+  background-color: #131212;
+  width: 100%;
+  height: 600px;
+  display: flex;
+}
+
+.inner-experience {
+  margin: auto;
+}
+
+.text-experience {
+  font-family: "Muli";
+  color: #fcf1f1;
+  margin: 30px;
+}
+
+.square {
+  div {
+    height: 160px;
+    float: left;
+    width: 160px;
+    margin: 10px;
+  }
+  #a img {
+    height: 150px;
+  }
+  #b img {
+    height: 150px;
+  }
+  #c {
+    clear: left;
+  }
+  #c img {
+    height: 150px;
+  }
+  #d img {
+    height: 150px;
+  }
+}
+
+.laptop-img {
+  height: 400px;
+  float: left;
+  width: auto;
+  margin-top: 200px;
+}
+
+.languages {
+  width: 100%;
+  height: 600px;
+  display: flex;
+}
+
+.inner-languages {
+  margin: 40px;
+}
+
+.text-languages {
+  font-family: "Muli";
+  margin: 20px;
+}
+
+.img-languages {
+  height: 500px;
+  float:right;
+}

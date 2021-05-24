@@ -1,7 +1,11 @@
 @import "src/styles.scss";
+
+.container {
+  height:60px;
+}
 .navbar {
     img {
-        height: 23px;
+        height: 60px;
         width: auto;
     }
     a {
