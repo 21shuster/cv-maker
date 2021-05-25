@@ -36,9 +36,9 @@ export class MenuComponent implements OnInit {
     this.bgWhite = true
   }
 
-  upload() {
+  login() {
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(["dashboard/people/new"])
+      this.router.navigate(["form"])
     } else {
       this.router.navigate(["/login"])
     }
