@@ -84,64 +84,104 @@
     <div class="language-check">
       <ul>
         <li>
-          <input type="checkbox" id="cb1" value="angular" (click)="onCompleteStep2($event)"/><label for="cb1"
+          <input
+            type="checkbox"
+            id="cb1"
+            value="angular"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb1"
             ><img src="assets/images/logo/angular.svg"
           /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb2" value="react" (click)="onCompleteStep2($event)"/><label for="cb2"
-            ><img src="assets/images/logo/react.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb2"
+            value="react"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb2"><img src="assets/images/logo/react.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb3" value="vuejs" (click)="onCompleteStep2($event)"/><label for="cb3"
-            ><img src="assets/images/logo/vuejs.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb3"
+            value="vuejs"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb3"><img src="assets/images/logo/vuejs.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb4" value="nodejs" (click)="onCompleteStep2($event)"/><label for="cb4"
-            ><img src="assets/images/logo/nodejs.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb4"
+            value="nodejs"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb4"><img src="assets/images/logo/nodejs.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb5" value="html5" (click)="onCompleteStep2($event)"/><label for="cb5"
-            ><img src="assets/images/logo/html5.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb5"
+            value="html5"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb5"><img src="assets/images/logo/html5.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb6" value="css3" (click)="onCompleteStep2($event)"/><label for="cb6"
-            ><img src="assets/images/logo/css3.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb6"
+            value="css3"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb6"><img src="assets/images/logo/css3.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb7" value="javascript" (click)="onCompleteStep2($event)"/><label for="cb7"
+          <input
+            type="checkbox"
+            id="cb7"
+            value="javascript"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb7"
             ><img src="assets/images/logo/javascript.svg"
           /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb8" value="python" (click)="onCompleteStep2($event)"/><label for="cb8"
-            ><img src="assets/images/logo/python.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb8"
+            value="python"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb8"><img src="assets/images/logo/python.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb9" value="ruby" (click)="onCompleteStep2($event)"/><label for="cb9"
-            ><img src="assets/images/logo/ruby.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb9"
+            value="ruby"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb9"><img src="assets/images/logo/ruby.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb10" value="php" (click)="onCompleteStep2($event)"/><label for="cb10"
-            ><img src="assets/images/logo/php.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb10"
+            value="php"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb10"><img src="assets/images/logo/php.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb11" value=".net" (click)="onCompleteStep2($event)"/><label for="cb11"
-            ><img src="assets/images/logo/.net.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb11"
+            value=".net"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb11"><img src="assets/images/logo/.net.svg" /></label>
         </li>
         <li>
-          <input type="checkbox" id="cb12" value="rust" (click)="onCompleteStep2($event)"/><label for="cb12"
-            ><img src="assets/images/logo/rust.svg"
-          /></label>
+          <input
+            type="checkbox"
+            id="cb12"
+            value="rust"
+            (click)="onCompleteStep2($event)"
+          /><label for="cb12"><img src="assets/images/logo/rust.svg" /></label>
         </li>
         <!--<li><input type="checkbox" id="cb13" /><label for="cb13"><img src="assets/images/logo/java.svg" /></label></li>
         <li><input type="checkbox" id="cb14" /><label for="cb14"><img src="assets/images/logo/kotlin.svg" /></label></li>
@@ -155,45 +195,72 @@
   <div *ngIf="step.stepIndex == 3" class="step-content-label">
     <h2 class="section-heading">Enter your Account Details</h2>
     <div class="form-group">
-      <label for="firstName" class="sr-only">First Name</label>
-      <input
-        type="text"
-        name="firstName"
-        id="firstName"
-        class="form-control"
-        placeholder="First Name"
-        (input)="onCompleteStep3($event)"
-      />
+      <table class="name-form" cellspacing="5"><tr>
+        <td><mat-form-field class="full-width" appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput name="name" [(ngModel)]="name" (input)="onCompleteStep3()">
+        </mat-form-field></td>
+        <td><mat-form-field class="full-width" appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput name="lastName" [(ngModel)]="lastName" value="Goodman">
+        </mat-form-field></td>
+        </tr>
+      </table>
     </div>
     <div class="form-group">
-      <label for="lastName" class="sr-only">Last Name</label>
-      <input
-        type="text"
-        name="lastName"
-        id="lastName"
-        class="form-control"
-        placeholder="Last Name"
-      />
+      <mat-form-field appearance="fill" class="phone-full-width">
+        <mat-label>Phone</mat-label>
+        <span matPrefix>+34 &nbsp;</span>
+        <input type="tel" matInput name="phone" [(ngModel)]="phone" placeholder="000-00-00-00">
+      </mat-form-field>
     </div>
+    <hr/>
     <div class="form-group">
-      <label for="phoneNumber" class="sr-only">Phone Number</label>
-      <input
-        type="text"
-        name="phoneNumber"
-        id="phoneNumber"
-        class="form-control"
-        placeholder="Phone Number"
-      />
-    </div>
-    <div class="form-group">
-      <label for="emailAddress" class="sr-only">Email Address</label>
-      <input
-        type="email"
-        name="emailAddress"
-        id="emailAddress"
-        class="form-control"
-        placeholder="Email Address"
-      />
+      <h5>Experience</h5>
+      <div *ngFor="let value of values; let i = index">
+        <div class="date-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Date Range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate (dateChange)="startChange($event)" placeholder="Inicio">
+                <input matEndDate (dateChange)="endChange($event)" placeholder="Fin">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+        <div class="job-form">
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Job position</mat-label>
+            <input matInput name="job{{ i }}" [(ngModel)]="value.job" placeholder="Ex. Manager" value="Full Stack Developer">
+          </mat-form-field>
+        </div>
+        <div class="description-form">
+          <mat-form-field appearance="outline" class="description-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput name="description{{ i }}" [(ngModel)]="value.description" #message maxlength="256" placeholder="Ex. Developing new apps...">
+            <mat-hint align="start"><strong>About the position</strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+        </div>
+        <!--<input
+          type="text"
+          [(ngModel)]="value.job"
+          #name="ngModel"
+          class="form-control"
+          name="job{{ i }}"
+        />
+        <input
+          type="text"
+          [(ngModel)]="value.description"
+          #name="ngModel"
+          class="form-control"
+          name="description{{ i }}"
+        />-->
+        <button class="btn" (click)="removevalue(i)">-</button>
+        <button class="btn" (click)="addvalue()">+</button>
+        <hr/>
+      </div>
     </div>
   </div>
   <div *ngIf="step.stepIndex == 4" class="step-content-label">
@@ -201,40 +268,58 @@
     <div class="hobbie-check">
       <ul>
         <li>
-          <input type="checkbox" id="cb1" /><label for="cb1"><p>🧗‍♂️</p></label>
+          <input type="checkbox" id="cb1" (click)="onCompleteStep4()"/><label for="cb1"><p>🧗‍♂️</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb2" /><label for="cb2"><p>🕺</p></label>
+          <input type="checkbox" id="cb2" (click)="onCompleteStep4()"/><label for="cb2"><p>🕺</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb3" /><label for="cb3"><p>🏃‍♂️</p></label>
+          <input type="checkbox" id="cb3" (click)="onCompleteStep4()"/><label for="cb3"><p>🏃‍♂️</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb4" /><label for="cb4"><p>🕴️</p></label>
+          <input type="checkbox" id="cb4" (click)="onCompleteStep4()"/><label for="cb4"><p>🕴️</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb5" /><label for="cb5"><p>⚽</p></label>
+          <input type="checkbox" id="cb5" (click)="onCompleteStep4()"/><label for="cb5"><p>⚽</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb6" /><label for="cb6"><p>🏀</p></label>
+          <input type="checkbox" id="cb6" (click)="onCompleteStep4()"/><label for="cb6"><p>🏀</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb7" /><label for="cb7"><p>🏓</p></label>
+          <input type="checkbox" id="cb7" (click)="onCompleteStep4()"/><label for="cb7"><p>🏓</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb8" /><label for="cb8"><p>🥊</p></label>
+          <input type="checkbox" id="cb8" (click)="onCompleteStep4()"/><label for="cb8"><p>🥊</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb9" /><label for="cb9"><p>⛸️</p></label>
+          <input type="checkbox" id="cb9" (click)="onCompleteStep4()"/><label for="cb9"><p>⛸️</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb10" /><label for="cb10"><p>🎿</p></label>
+          <input type="checkbox" id="cb10" (click)="onCompleteStep4()"/><label for="cb10"><p>🎿</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb11" /><label for="cb11"><p>🥋</p></label>
+          <input type="checkbox" id="cb11" (click)="onCompleteStep4()"/><label for="cb11"><p>🥋</p></label>
         </li>
         <li>
-          <input type="checkbox" id="cb12" /><label for="cb12"><p>🎳</p></label>
+          <input type="checkbox" id="cb12" (click)="onCompleteStep4()"/><label for="cb12"><p>🎳</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb13" (click)="onCompleteStep4()"/><label for="cb13"><p>🎮</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb14" (click)="onCompleteStep4()"/><label for="cb14"><p>🎯</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb15" (click)="onCompleteStep4()"/><label for="cb15"><p>🃏</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb16" (click)="onCompleteStep4()"/><label for="cb16"><p>🎲</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb17" (click)="onCompleteStep4()"/><label for="cb17"><p>🪄</p></label>
+        </li>
+        <li>
+          <input type="checkbox" id="cb18" (click)="onCompleteStep4()"/><label for="cb18"><p>🎨</p></label>
         </li>
       </ul>
     </div>

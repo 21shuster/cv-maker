@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
@@ -13,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { LinkedinLoginResponse } from "./components/linkedinLoginResponse/linkedinLoginResponse.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { WizardComponent } from './components/wizard/wizard.component';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { StepsComponent } from './components/steps/steps.component';
@@ -21,7 +24,7 @@ import { CompletePageComponent } from './pages/complete-page/complete-page.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
@@ -37,10 +40,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatNativeDateModule,
     HttpClientModule,
     FontAwesomeModule
   ],
