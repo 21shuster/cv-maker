@@ -128,7 +128,7 @@ export class LoginComponent implements OnInit {
     login.password = this.f.password.value
     this.userService.login(login).subscribe((data: any) => {
       localStorage.setItem("token",data.access_token)
-      this.router.navigate(["/dashboard"])
+      this.router.navigate(["/form"])
       console.log(data)
     },
       error => {

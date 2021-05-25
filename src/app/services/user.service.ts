@@ -22,7 +22,7 @@ export class UserService {
   }
 
   register(login: Login): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/user`, login).pipe(
+    return this.httpClient.post(`${environment.apiUrl}/signup`, login).pipe(
       catchError(error => {
         return throwError(error);
       })
