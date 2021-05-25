@@ -46,10 +46,10 @@
             placeholder="Password"
             formControlName="password"
           />
-          <label for="floatingPassword">Contraseña</label>
+          <label for="floatingPassword">Password</label>
         </div>
         <div class="row col-md-12">
-          <button class="btn btn-social btn-linkedin">
+          <button class="btn btn-social btn-linkedin" (click)="login()">
             <i class="fa fa-linkedin"></i>Sign in with LinkedIn
           </button>
         </div>
@@ -60,7 +60,7 @@
         </div>
         <div class="row col-md-12">
           <button class="btn btn-lg btn-primary" type="submit">
-            Registrarme
+            Sign Up
           </button>
         </div>
       </form>
@@ -85,10 +85,15 @@
     </div>
   </div>
 </div>
-<div class="languages">
-  <div class="inner-languages">
-    <h2 class="text-languages">Programming Languages</h2>
-    <h4>Your development skills in a few steps, a good visual way to show your professional experience.</h4>
-    <img class="img-languages" src="https://www.pngitem.com/pimgs/m/361-3612259_mean-stack-hd-png-download.png">
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="text-languages">Programming Languages</h2>
+      <h4>Your development skills in a few steps, a good visual way to show your professional experience.</h4>
+    </div>
+    <div class="col-6">
+      <img class="img-languages" src="https://www.pngitem.com/pimgs/m/361-3612259_mean-stack-hd-png-download.png">
+    </div>
   </div>
 </div>
