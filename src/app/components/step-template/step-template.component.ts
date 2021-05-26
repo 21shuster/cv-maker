@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { StepModel } from '../../models/step.model';
 import * as moment from 'moment';
 import { Person } from 'src/app/models/person.model';
+import { CvService } from 'src/app/services/cv.service';
 
 @Component({
   selector: 'app-step-template',
@@ -21,14 +22,14 @@ export class StepTemplateComponent implements OnInit {
   phone: string = '645322344'
   dateStart: string = ''
   dateEnd: string = ''
-  values = [{date: '', job:'Lawyer', description:''}]
+  values = [{ date: '', job: 'Lawyer', description: '' }]
 
-  constructor() {}
+  constructor(private service: CvService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onCompleteStep1(event: any) {
-    switch(event.target.value) {
+    switch (event.target.value) {
       case 'Mobile Design': {
         this.step.isComplete = true
         this.job = event.target.value
@@ -43,7 +44,7 @@ export class StepTemplateComponent implements OnInit {
         this.step.isComplete = true
         this.job = event.target.value
         break
-     }
+      }
       default: {
         break
       }
@@ -52,16 +53,16 @@ export class StepTemplateComponent implements OnInit {
 
   onCompleteStep2(event: any) {
     var value = event.target.value
-    if(!this.languages.includes(value)){
+    if (!this.languages.includes(value)) {
       this.languages.push(value)
-    }else{
+    } else {
       this.removeElement(this.languages, value)
     }
     this.step.isComplete = this.languages.length == 0 ? false : true
   }
 
   onCompleteStep3() {
-    if(this.name != ""){
+    if (this.name != "") {
       this.step.isComplete = true
     }
   }
@@ -76,17 +77,29 @@ export class StepTemplateComponent implements OnInit {
     this.person.surname = this.lastName
     this.person.picture = ''
     this.person.birthday = ''
-    this.person.job=  this.job
+    this.person.job = this.job
     console.log(this.person)
+    this.createCV()
     this.step.isComplete = true
   }
-
-  removevalue(i: number){
-    this.values.splice(i,1)
+  createCV() {
+    console.log(this.person)
+    this.service.saveCV(this.person).subscribe((data) => {
+      console.log(data)
+    },
+      error => {
+        console.log("Error:", error);
+      }
+    );
   }
 
-  addvalue(){
-    this.values.push({date: '', job:'', description:''});
+
+  removevalue(i: number) {
+    this.values.splice(i, 1)
+  }
+
+  addvalue() {
+    this.values.push({ date: '', job: '', description: '' });
   }
 
   startChange(data: any) {
@@ -105,9 +118,9 @@ export class StepTemplateComponent implements OnInit {
     }
   }
 
-  removeElement(array:String[], element: String) {
-    array.forEach((value,index)=>{
-        if(value==element) array.splice(index,1)
+  removeElement(array: String[], element: String) {
+    array.forEach((value, index) => {
+      if (value == element) array.splice(index, 1)
     });
   }
 }

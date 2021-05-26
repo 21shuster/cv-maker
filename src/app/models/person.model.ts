@@ -1,3 +1,5 @@
+import { Login } from "./login.model";
+
 export class Person {
   languages?: string[];
   experience?: string[];
@@ -9,6 +11,5 @@ export class Person {
   picture?:     string;
   birthday?: string;
   job?:       string;
-  iduser?:     string;
-  _id?:        string;
+  user?:     Login; 
 }
