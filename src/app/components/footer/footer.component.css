@@ -9,7 +9,7 @@ body {
 
 .container-fluid {
   overflow: hidden;
-  margin-top: 150px;
+  margin-top: 50px;
   background: #d3cfcf;
   color: #35383a !important;
   margin-bottom: 0;
@@ -49,7 +49,7 @@ h3 {
 }
 .navbar-brand img {
   height: 100px;
-
+  margin: 10px;
   width: auto;
 }
 
