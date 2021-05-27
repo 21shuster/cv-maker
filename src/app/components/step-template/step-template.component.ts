@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { StepModel } from '../../models/step.model';
 import * as moment from 'moment';
 import { Person } from 'src/app/models/person.model';
-import { CvService } from 'src/app/services/cv.service';
+import { StepsService } from '../../services/steps.service';
 
 @Component({
   selector: 'app-step-template',
@@ -10,23 +10,26 @@ import { CvService } from 'src/app/services/cv.service';
   styleUrls: ['./step-template.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class StepTemplateComponent implements OnInit {
 
-  person: Person = new Person()
   @Input() step!: StepModel
+  person: Person = new Person()
   biography: string = ''
   job: string = ''
-  languages: string[] = []
   name: string = 'Saul'
   lastName: string = 'Goodman'
   phone: string = '645322344'
+  languages: string[] = []
   dateStart: string = ''
   dateEnd: string = ''
   values = [{ date: '', job: 'Lawyer', description: '' }]
 
-  constructor(private service: CvService) { }
+  constructor(private stepsService: StepsService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.person = this.stepsService.getPerson()
+  }
 
   onCompleteStep1(event: any) {
     switch (event.target.value) {
@@ -58,41 +61,24 @@ export class StepTemplateComponent implements OnInit {
     } else {
       this.removeElement(this.languages, value)
     }
+    this.person.languages = this.languages
+    this.stepsService.setPerson(this.person)
     this.step.isComplete = this.languages.length == 0 ? false : true
   }
 
   onCompleteStep3() {
-    if (this.name != "") {
+    if(this.person.name != "" && this.person.name != "") {
+      this.person.name = this.name
+      this.person.surname = this.lastName
+      this.person.phone = this.phone
+      this.stepsService.setPerson(this.person)
       this.step.isComplete = true
     }
   }
 
   onCompleteStep4() {
-    this.person.languages = this.languages
-    this.person.experience = []
-    this.person.education = []
-    this.person.biography = this.job
-    this.person.phone = this.phone
-    this.person.name = this.name
-    this.person.surname = this.lastName
-    this.person.picture = ''
-    this.person.birthday = ''
-    this.person.job = this.job
-    console.log(this.person)
-    this.createCV()
     this.step.isComplete = true
   }
-  createCV() {
-    console.log(this.person)
-    this.service.saveCV(this.person).subscribe((data) => {
-      console.log(data)
-    },
-      error => {
-        console.log("Error:", error);
-      }
-    );
-  }
-
 
   removevalue(i: number) {
     this.values.splice(i, 1)

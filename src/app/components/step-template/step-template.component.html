@@ -202,7 +202,7 @@
         </mat-form-field></td>
         <td><mat-form-field class="full-width" appearance="fill">
           <mat-label>Last Name</mat-label>
-          <input matInput name="lastName" [(ngModel)]="lastName" value="Goodman">
+          <input matInput name="lastName" [(ngModel)]="lastName" (input)="onCompleteStep3()">
         </mat-form-field></td>
         </tr>
       </table>
@@ -211,7 +211,7 @@
       <mat-form-field appearance="fill" class="phone-full-width">
         <mat-label>Phone</mat-label>
         <span matPrefix>+34 &nbsp;</span>
-        <input type="tel" matInput name="phone" [(ngModel)]="phone" placeholder="000-00-00-00">
+        <input type="tel" matInput name="phone" [(ngModel)]="phone" placeholder="000-00-00-00" (input)="onCompleteStep3()">
       </mat-form-field>
     </div>
     <hr/>
