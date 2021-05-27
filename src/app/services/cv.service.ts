@@ -20,4 +20,20 @@ saveCV(person: Person): Observable<any> {
   );
 }
 
+getProfile(): Observable<any> {
+  return this.httpClient.get(`${environment.apiUrl}/linkedin`).pipe(
+    catchError(error => {
+      return error;
+    })
+  );
+}
+
+getPicture(): Observable<any> {
+  return this.httpClient.get(`${environment.apiUrl}/linkedinPicture`).pipe(
+    catchError(error => {
+      return error;
+    })
+  );
+}
+
 }

@@ -1,6 +1,6 @@
 import { Login } from '../../models/login.model';
 import { UserService } from '../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -33,7 +33,7 @@ import {
 export class LoginComponent implements OnInit {
 
   name = 'Angular 6';
-
+  container!: HTMLElement;
   blackState:boolean = true;
   greenState: boolean = false;
 
@@ -89,9 +89,9 @@ export class LoginComponent implements OnInit {
           this.loadImage();
         }
         this.imageToShow = `https://www.artic.edu/iiif/2/${image.data.image_id}/full/1500,1000/0/default.jpg`;
-        document.body.style.background = "url(" + this.imageToShow + ") no-repeat 80%";
-        //document.body.style.cursor = "url(./assets/images/search.gif), auto";
-        document.body.style.cursor = "url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto";
+        this.container = document.getElementById('container') as HTMLElement;
+        this.container.style.background = "url(" + this.imageToShow + ") no-repeat 80%";
+        this.container.style.cursor = "url('assets/images/droplet.svg'), auto";
       })
   }
 

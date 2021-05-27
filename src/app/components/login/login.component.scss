@@ -1,3 +1,7 @@
+#box{
+  width:500px;
+}
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -10,8 +14,11 @@
   border-top-right-radius: 0;
 }
 
-body {
-  cursor:url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif);
+#container {
+  width:95%;
+  float:right;
+  height: 800px;
+  cursor:url('/assets/images/droplet.svg'), auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

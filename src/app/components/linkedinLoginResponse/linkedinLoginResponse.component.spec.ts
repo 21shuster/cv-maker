@@ -5,18 +5,18 @@ import { DebugElement } from '@angular/core';
 import {LinkedinLoginResponse} from './linkedinLoginResponse.component'
 
 describe('LinkedinLoginResponseComponent', () => {
-  let component: LinkedinLoginResponseComponent;
-  let fixture: ComponentFixture<LinkedinLoginResponseComponent>;
+  let component: LinkedinLoginResponse;
+  let fixture: ComponentFixture<LinkedinLoginResponse>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LinkedinLoginResponseComponent ]
+      declarations: [ LinkedinLoginResponse ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinkedinLoginResponseComponent);
+    fixture = TestBed.createComponent(LinkedinLoginResponse);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
