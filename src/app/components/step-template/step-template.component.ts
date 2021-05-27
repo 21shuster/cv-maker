@@ -67,10 +67,17 @@ export class StepTemplateComponent implements OnInit {
   }
 
   onCompleteStep3() {
-    if(this.person.name != "" && this.person.name != "") {
+    if(this.person.name != "" && this.person.surname != "" && this.person.phone != "") {
       this.person.name = this.name
       this.person.surname = this.lastName
       this.person.phone = this.phone
+      console.log(this.values)
+      this.person.experience = []
+      this.values.forEach(value => {
+        console.log(`${this.dateStart} - ${this.dateEnd} ; ${value.job} ; ${value.description}`)
+        this.person.experience?.push(`${this.dateStart} - ${this.dateEnd} ; ${value.job} ; ${value.description}`)
+      });
+      console.log(this.person.experience)
       this.stepsService.setPerson(this.person)
       this.step.isComplete = true
     }
@@ -78,6 +85,7 @@ export class StepTemplateComponent implements OnInit {
 
   onCompleteStep4() {
     this.step.isComplete = true
+    console.log(this.person)
   }
 
   removevalue(i: number) {

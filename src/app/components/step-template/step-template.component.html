@@ -238,8 +238,8 @@
         <div class="description-form">
           <mat-form-field appearance="outline" class="description-full-width">
             <mat-label>Description</mat-label>
-            <input matInput name="description{{ i }}" [(ngModel)]="value.description" #message maxlength="256" placeholder="Ex. Developing new apps...">
-            <mat-hint align="start"><strong>About the position</strong> </mat-hint>
+            <input matInput name="description{{ i }}" (input)="onCompleteStep3()"[(ngModel)]="value.description" #message maxlength="256" placeholder="Ex. Developing new apps...">
+            <mat-hint align="start"><strong>About the position</strong></mat-hint>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
           </mat-form-field>
         </div>

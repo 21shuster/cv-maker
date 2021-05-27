@@ -17,6 +17,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { WizardComponent } from './components/wizard/wizard.component';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { StepsComponent } from './components/steps/steps.component';
@@ -45,6 +46,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     MatCardModule,
     AppRoutingModule,
     ReactiveFormsModule,

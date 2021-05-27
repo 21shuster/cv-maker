@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Login } from '../../models/login.model';
+import { UserService } from '../../services/user.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private fb: FormBuilder, private userService: UserService, private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -25,4 +30,5 @@ export class HomeComponent implements OnInit {
       this.linkedInCredentials.clientId
     }&redirect_uri=${this.linkedInCredentials.redirectUrl}&scope=${this.linkedInCredentials.scope}`;
   }
+
 }

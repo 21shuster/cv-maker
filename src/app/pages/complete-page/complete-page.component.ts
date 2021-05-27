@@ -18,7 +18,7 @@ export class CompletePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.person = this.stepsService.getPerson()
-    this.createCV()
+    //this.createCV()
   }
 
   createCV() {

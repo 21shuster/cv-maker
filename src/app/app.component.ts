@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'cv-maker';
   isLogin = false
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
     moment.locale('es')
   }
 

@@ -4,6 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+
 import {
   trigger,
   state,
@@ -92,6 +93,8 @@ export class LoginComponent implements OnInit {
         this.container = document.getElementById('container') as HTMLElement;
         this.container.style.background = "url(" + this.imageToShow + ") no-repeat 80%";
         this.container.style.cursor = "url('assets/images/droplet.svg'), auto";
+        var title = document.getElementById('title') as HTMLElement;
+        title.style.color =  "#ffffff";
       })
   }
 
