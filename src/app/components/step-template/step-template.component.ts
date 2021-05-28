@@ -52,6 +52,8 @@ export class StepTemplateComponent implements OnInit {
         break
       }
     }
+    this.person.job = this.job
+    this.stepsService.setPerson(this.person)
   }
 
   onCompleteStep2(event: any) {

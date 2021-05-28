@@ -11,6 +11,7 @@ import { Person } from 'src/app/models/person.model';
 export class CompletePageComponent implements OnInit {
 
   person: Person = new Person()
+  url: string = ''
 
   constructor(
     private stepsService: StepsService,
@@ -18,12 +19,13 @@ export class CompletePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.person = this.stepsService.getPerson()
-    //this.createCV()
+    this.createCV()
+    this.url =  this.person.job == 'Mobile Design' ? '/template/Android' : '/template/Angular'
   }
 
   createCV() {
     console.log(this.person)
-    if(this.person != undefined) {
+    if(this.person.name != '') {
       this.service.saveCV(this.person).subscribe((data) => {
         console.log(data)
       },

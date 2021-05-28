@@ -38,3 +38,12 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.link{
+  transition: width 2s;
+}
+
+.link:hover {
+  width: 100px;
+}
+

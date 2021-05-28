@@ -1,3 +1,3 @@
-<app-menu *ngIf="!isLogin"></app-menu>
+<app-menu *ngIf="!isLogin && router.url !== '/template/Android'"></app-menu>
 <router-outlet></router-outlet>
 <app-footer *ngIf="!isLogin && router.url !== '/form' && router.url !== '/complete'"></app-footer>

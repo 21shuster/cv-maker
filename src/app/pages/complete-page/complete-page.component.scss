@@ -1,5 +1,27 @@
 @import 'src/assets/colors/colors.scss';
 
+
+.completed-page-check {
+  position: relative;
+  animation: mymove 5s;
+}
+
+@keyframes mymove {
+  0% {right: -300px; opacity: 0}
+  50% {right: 0; display: block; opacity: 1;}
+  100% {opacity: 1; display: none;}
+}
+
+.title {
+  position: relative;
+  animation: appear 2s;
+}
+
+@keyframes appear {
+  0% { opacity: 0;}
+  100% { display: block;}
+}
+
 .complete-page {
     width: 100%;
     height: 100%;
