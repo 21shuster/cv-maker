@@ -7,9 +7,11 @@ import { FormPageComponent } from "./pages/form-page/form-page.component";
 import { HomeComponent } from './components/home/home.component';
 import { TemplateAngularComponent } from './templates/templateAngular/templateAngular.component';
 import { TemplateAndroidComponent } from './templates/templateAndroid/templateAndroid.component';
+import { AboutUsComponent } from './components/aboutUs/aboutUs.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
+  { path: "aboutus", component: AboutUsComponent},
   { path: "login", component: LoginComponent },
   { path: "linkedInLogin", component: LinkedinLoginResponse },
   { path: 'form', component: FormPageComponent },
